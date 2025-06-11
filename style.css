@@ -1,0 +1,377 @@
+body {
+  font-size: 110%;
+  font-family: "Poppins", sans-serif;
+  background-color: #fcefee; /* Um fundo rosa bem clarinho */
+  color: #5c3b3b;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* --- HEADER COM COR SÓLIDA E PROFUNDIDADE --- */
+header {
+  padding: 30px 20px;
+  text-align: center;
+  color: white;
+
+  /* Cor sólida principal, o rosa escuro do seu site */
+  background-color: #e91e63;
+
+  /* Sombra interna sutil para dar profundidade */
+  box-shadow: inset 0 -10px 15px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* O resto do código para h1, subtitulo-header, ::before e ::after continua o mesmo da Opção 1 */
+header h1 {
+  font-family: "Parisienne", cursive;
+  font-size: 4.5em;
+  margin: 0;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  position: relative;
+  display: inline-block;
+  padding: 0 40px;
+}
+
+header h1::before,
+header h1::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 2px;
+  background-color: white;
+  opacity: 0.8;
+}
+
+header h1::before {
+  left: 0;
+}
+
+header h1::after {
+  right: 0;
+}
+
+main {
+  padding: 20px;
+}
+
+.declaracao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin: 40px auto;
+  max-width: 1100px;
+  text-align: left;
+}
+
+.declaracao img {
+  max-width: 450px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 5px solid white;
+}
+
+.texto-declaracao h2 {
+  font-family: "Parisienne", cursive;
+  font-size: 2.5em;
+  color: #e91e63;
+}
+
+.galeria h2 {
+  font-family: "Parisienne", cursive;
+  font-size: 2.5em;
+  color: #e91e63;
+  margin-bottom: 20px;
+}
+
+.container-fotos {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.container-fotos img {
+  max-width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.container-fotos img:hover {
+  transform: scale(1.05);
+}
+
+.contagem-regressiva {
+  background-color: #fff;
+  padding: 40px 20px;
+  margin-top: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contagem-regressiva h2 {
+  font-family: "Parisienne", cursive;
+  font-size: 2.8em;
+  color: #e91e63;
+  margin: 0;
+}
+
+#contador {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+#contador .tempo span {
+  display: block;
+}
+
+#contador .tempo small {
+  font-size: 0.3em;
+  font-family: "Poppins", sans-serif;
+  color: #5c3b3b;
+}
+
+footer {
+  padding: 20px;
+  margin-top: 30px;
+  font-style: italic;
+}
+
+/* Animação de corações aleatórios */
+.coracao-voando {
+  position: fixed;
+  bottom: -50px; /* Começa fora da tela, lá embaixo */
+  font-size: 1.5rem;
+  color: #e91e63;
+  z-index: -1;
+  /* A mágica da animação de subida */
+  animation: subir 10s linear;
+  user-select: none; /* Impede que o usuário selecione os corações */
+  pointer-events: none; /* Impede que os corações atrapalhem cliques */
+}
+
+@keyframes subir {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh); /* Sobe até desaparecer acima da tela */
+    opacity: 0;
+  }
+}
+
+.mini-galeria {
+  max-width: 1100px; /* <-- ADICIONE ESTA LINHA (mesma largura da seção da declaração) */
+  margin: 30px auto 0 auto; /* <-- AJUSTE ESTA LINHA para centralizar */
+  padding: 30px 20px;
+  background-color: #f8f0e3;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.mini-galeria h2 {
+  font-family: "Parisienne", cursive;
+  font-size: 2.2em;
+  color: #e91e63;
+  margin-bottom: 15px;
+}
+
+.container-mini-fotos {
+  display: grid;
+  grid-template-columns: repeat(
+    4,
+    1fr
+  ); /* <-- A mágica acontece aqui: 4 colunas de tamanho igual */
+  gap: 15px; /* Aumentei um pouco o espaçamento para a grade ficar mais bonita */
+}
+
+.container-mini-fotos img {
+  width: 100%; /* <-- A imagem vai ocupar 100% da coluna da grade */
+  height: 350px; /* Mantemos a altura fixa para um visual uniforme */
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.container-mini-fotos img:hover {
+  transform: scale(1.05); /* Aumenta o zoom ao passar o mouse */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Aumenta a sombra ao passar o mouse */
+  filter: brightness(1.1); /* Levemente mais brilhante ao passar o mouse */
+  cursor: pointer; /* Muda o cursor para indicar que é interativo */
+}
+
+.subtitulo-galeria {
+  font-style: italic; /* Deixa o texto em itálico, dando um toque pessoal */
+  color: #7a5c5c; /* Um tom um pouco mais suave */
+  margin-top: -15px; /* Puxa o texto um pouco para cima, mais perto do título */
+  margin-bottom: 25px; /* Dá um espaço antes das fotos começarem */
+  padding: 0 20px; /* Evita que o texto encoste nas bordas em telas pequenas */
+  max-width: 800px; /* Limita a largura em telas grandes para não ficar muito espalhado */
+  margin-left: auto; /* Centraliza o elemento */
+  margin-right: auto; /* Centraliza o elemento */
+}
+
+.texto-final {
+  font-size: 1.1em; /* Um pouco maior que o texto normal */
+  color: #5c3b3b; /* Cor principal do texto */
+  text-align: center; /* Centralizado */
+  line-height: 1.6; /* Espaçamento entre as linhas para melhor leitura */
+  max-width: 800px; /* Limita a largura em telas grandes */
+  margin: 50px auto 30px auto; /* Espaçamento: 50px em cima, auto nas laterais, 30px embaixo */
+  padding: 0 20px; /* Preenchimento para não encostar nas bordas */
+}
+
+.nossa-playlist {
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.nossa-playlist h2 {
+  font-family: "Parisienne", cursive;
+  font-size: 2.5em;
+  color: #e91e63;
+  margin-bottom: 10px;
+}
+
+.nossa-playlist p {
+  font-style: italic;
+  color: #7a5c5c;
+  margin-bottom: 20px;
+}
+
+.nossa-playlist iframe {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.secao-vales {
+  text-align: center;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.secao-vales h2 {
+  font-family: "Parisienne", cursive;
+  font-size: 2.5em;
+  color: #e91e63;
+  margin-bottom: 25px;
+}
+
+.container-vales {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.vale-presente {
+  background: #fff;
+  border: 2px dashed #e91e63;
+  padding: 20px 30px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  position: relative;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Adiciona transição suave */
+}
+
+.vale-presente:hover {
+  transform: scale(1.05) rotate(1deg); /* Aumenta um pouco e gira levemente */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Aumenta a sombra para dar profundidade */
+  cursor: pointer;
+}
+
+.vale-presente p {
+  font-family: "Poppins", sans-serif;
+  color: #5c3b3b;
+  font-weight: 400;
+  font-size: 1.1em;
+  margin: 0;
+}
+
+/* Opcional: ícone de tesoura */
+.vale-presente::before {
+  content: "✂️";
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+  opacity: 0.5;
+}
+
+/* Animação de Fade-in ao rolar */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Estilos para a Raspadinha do Amor --- */
+.raspadinha-wrapper {
+  text-align: center;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.raspadinha-wrapper h2 {
+  font-family: "Parisienne", cursive;
+  font-size: 2.5em;
+  color: #e91e63;
+  margin-bottom: 25px;
+}
+
+#raspadinha-container {
+  position: relative;
+  width: 100%;
+  max-width: 550px; /* Largura da raspadinha */
+  height: 300px; /* Altura da raspadinha */
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  cursor: grab;
+
+  background-image: url("fotos/pesProAlto.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+#raspadinha-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.raspadinha-texto-escondido {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.raspadinha-texto-escondido p {
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  text-align: center;
+}
