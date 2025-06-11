@@ -375,3 +375,76 @@ footer {
   padding: 20px;
   text-align: center;
 }
+
+/* --- CÓDIGO PARA RESPONSIVIDADE (CELULAR E TABLET) --- */
+/* Estas regras só serão aplicadas em telas com 768px de largura ou menos */
+@media (max-width: 768px) {
+  /* == AJUSTES GERAIS DE FONTE == */
+  body {
+    font-size: 100%; /* Volta a fonte para o tamanho padrão no celular para melhor leitura */
+  }
+
+  /* == HEADER == */
+  header {
+    padding: 40px 15px; /* Diminui o espaçamento interno do header */
+  }
+
+  header h1 {
+    font-size: 2.8em; /* Diminui o título principal */
+    padding: 0 15px; /* Reduz o espaçamento das linhas laterais */
+  }
+
+  header h1::before,
+  header h1::after {
+    width: 20px; /* Diminui o tamanho das linhas */
+  }
+
+  .subtitulo-header {
+    font-size: 1em; /* Ajusta o subtitulo */
+  }
+
+  /* == SEÇÃO DA DECLARAÇÃO == */
+  .declaracao {
+    flex-direction: column; /* Faz a foto e o texto ficarem um em cima do outro */
+    text-align: center; /* Centraliza o texto que agora está em coluna */
+    gap: 20px;
+  }
+
+  .declaracao img {
+    max-width: 90%; /* A imagem agora ocupa 90% da largura da tela */
+    margin: 0 auto; /* Centraliza a imagem */
+  }
+
+  .texto-declaracao h2 {
+    font-size: 2.2em;
+  }
+
+  /* == GALERIA DE 8 FOTOS == */
+  .container-mini-fotos {
+    grid-template-columns: repeat(2, 1fr); /* Em vez de 4, mostra 2 colunas */
+    gap: 10px; /* Diminui o espaço entre as fotos */
+  }
+
+  .container-mini-fotos img {
+    height: 250px; /* Diminui a altura das fotos no celular */
+  }
+
+  /* == CONTAGEM REGRESSIVA == */
+  .contagem-regressiva h2 {
+    font-size: 2.2em; /* Diminui o título da contagem */
+  }
+
+  #contador {
+    font-size: 2.5em; /* Diminui os números da contagem */
+    gap: 15px; /* Diminui o espaço entre os números */
+  }
+
+  /* == RASPADINHA == */
+  #raspadinha-container {
+    height: 250px; /* Diminui a altura da raspadinha */
+  }
+
+  .raspadinha-texto-escondido p {
+    font-size: 1.5em; /* Diminui o texto da raspadinha */
+  }
+}
